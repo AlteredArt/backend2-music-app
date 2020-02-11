@@ -15,7 +15,6 @@ class SongsController < ApplicationController
             artist: params[:artist],
             album: params[:album],
             duration: params[:duration]
-
         )
         redirect_to "http://localhost/3001"
     end
