@@ -11,7 +11,7 @@ class PlaylistSongsController < ApplicationController
 
     def create 
         @playlist_songs = PlaylistSong.create(
-            song_id: params[:song]
+            song_id: params[:song],
             playlist_id: params[:playlist]
         )
         redirect_to 'http://localhost:3001'
