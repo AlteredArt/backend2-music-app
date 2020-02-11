@@ -1,12 +1,12 @@
 class SongsController < ApplicationController
     def index
         @songs = Song.all
-        render json: @songs, include: :playlist
+        render json: @songs, include: :playlists
     end
 
     def show
         @song = Song.find(params[:id])
-        render json: @song, include: :playlist
+        render json: @song, include: :playlists
     end
 
     def create
