@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(
-            name: params[:id],
-            username: params[:id]
+            username: params[:username],
+            name: params[:name]
         )
         redirect_to 'http://localhost:3001'
     end
