@@ -17,5 +17,19 @@ p1 = Playlist.create(name: "Workout", user: u1)
 
 s1 = Song.create(title: "Shimmy Shimmy Ya", artist: "Dirty OL Bastard", album:"THATALBUM", duration: 3.13)
 
-PlaylistSong.create(song:s1 , playlist:p1 )
+v1 = PlaylistSong.create(song:s1 , playlist:p1 )
+
+
+
+rm = RestClient.get "https://deezerdevs-deezer.p.rapidapi.com&api_key=8384d17005mshf5e19b1581270a5p14f6bdjsn356be895ec06"
+
+rm_array = JSON.parse(rm)[“results”]
+    rm_array.each do |character|
+        Song.create(
+        title: song[“title”],
+        artist: song[“artist”],
+        album: song[“album”],
+        duration: song[“duration”]
+        )
+       end
 
