@@ -11,11 +11,10 @@ class SongsController < ApplicationController
 
     def create
         @song = Song.create(
-            title: params[:title],
-            artist: params[:artist],
-            album: params[:album],
-            duration: params[:duration]
+            track_id: params[:track_id]
         )
         redirect_to "http://localhost:3001/showuser.html?id=${id}"
     end
+
+
 end
