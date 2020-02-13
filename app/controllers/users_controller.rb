@@ -14,6 +14,25 @@ class UsersController < ApplicationController
             username: params[:username],
             name: params[:name]
         )
-        redirect_to 'http://localhost:3001'
+        # render json: { user: @user}
+        redirect_to "http://localhost:3001"
     end
+
+    def destroy
+        User.find(params[:id])
+        @user.destroy
+        # render status: :no_content
+        redirect_to "http://localhost:3001"
+    end
+
+    def update 
+        @user = User.find(params[:id])
+        @user.update(
+            name: params[:name],
+            username: params[:username]
+        )
+        # render json: @users
+        redirect_to "http://localhost:3001"
+    end
+
 end

@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 PlaylistSong.destroy_all
 Playlist.destroy_all
 Song.destroy_all
@@ -17,3 +18,4 @@ p1 = Playlist.create(name: "Workout", user: u1)
 s1 = Song.create(title: "Shimmy Shimmy Ya", artist: "Dirty OL Bastard", album:"THATALBUM", duration: 3.13)
 
 PlaylistSong.create(song:s1 , playlist:p1 )
+

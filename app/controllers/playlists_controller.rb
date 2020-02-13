@@ -14,6 +14,21 @@ class PlaylistsController < ApplicationController
             name: params[:name],
             user_id: params[:user]
         )
-        redirect_to "http://localhost/3001"
+        render status: :accepted
+        # redirect_to "http://localhost:3001/showusers.html?id=#{params[:id]}"
+    end
+
+    def destroy
+        Playlist.find(params[:id])
+        @playlist.destroy
+        redirect_to "http://localhost:3001/showplaylist.html?id=#{params[:id]}"
+    end
+
+    def update 
+        @playlist = Playlist.find(params[:id])
+        @playlist.update(
+            name: params[:name]
+        )
+        redirect_to "http://localhost:3001/showplaylist.html?id=#{params[:id]}"
     end
 end
