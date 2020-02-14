@@ -29,6 +29,6 @@ class PlaylistsController < ApplicationController
         @playlist.update(
             name: params[:name]
         )
-        redirect_to "http://localhost:3001/showplaylist.html?id=#{params[:id]}"
+        redirect_back fallback_location: "http://localhost:3001"
     end
 end

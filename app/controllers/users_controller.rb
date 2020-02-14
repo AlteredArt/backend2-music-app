@@ -14,7 +14,6 @@ class UsersController < ApplicationController
             username: params[:username],
             name: params[:name]
         )
-        # render json: { user: @user}
         redirect_to "http://localhost:3001/signin.html"
     end
 

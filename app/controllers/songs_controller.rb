@@ -13,7 +13,7 @@ class SongsController < ApplicationController
         @song = Song.create(
             track_id: params[:track_id]
         )
-        render status: :accepted
+        redirect_back fallback_location: "http://localhost:3001"
     end
 
 
