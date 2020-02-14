@@ -13,7 +13,7 @@ class SongsController < ApplicationController
         @song = Song.create(
             track_id: params[:track_id]
         )
-        redirect_to "http://localhost:3001/showuser.html?id=${id}"
+        render status: :accepted
     end
 
 

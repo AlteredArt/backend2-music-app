@@ -14,14 +14,14 @@ class PlaylistsController < ApplicationController
             name: params[:name],
             user_id: params[:user]
         )
-        render status: :accepted
-        # redirect_to "http://localhost:3001/showusers.html?id=#{params[:id]}"
+        redirect_back fallback_location: "http://localhost:3001"
     end
 
     def destroy
-        Playlist.find(params[:id])
+       @playlist = Playlist.find(params[:id])
         @playlist.destroy
-        redirect_to "http://localhost:3001/showplaylist.html?id=#{params[:id]}"
+        redirect_back fallback_location: "http://localhost:3001"
+
     end
 
     def update 
